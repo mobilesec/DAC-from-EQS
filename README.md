@@ -9,11 +9,9 @@ The implementation includes optimizations such as cross-set commitment aggregati
 # Warning:
 This implementation not been audited and is not ready for a production application. The library is provided for research-purpose only and is still not meant to be used in production.
 
-#  Dependencies
-Library is built on top of [petlib](https://github.com/gdanezis/petlib) and [bplib ](https://github.com/gdanezis/bplib), make sure to follow these instructions to install all the pre-requisites.
+#  Getting started
+Library is built on top of [petlib](https://github.com/gdanezis/petlib) and [bplib ](https://github.com/gdanezis/bplib). To install the development dependencies run
 
-# Getting started
-To install the development dependencies run
 1. Install nix with the required experimental features from determinate systems
 
            curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
