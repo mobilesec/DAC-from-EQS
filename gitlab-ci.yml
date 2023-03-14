@@ -1,0 +1,12 @@
+default:
+  tags:
+    - nix-container-shell
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - nix develop -c pytest -s -v tests/
+
