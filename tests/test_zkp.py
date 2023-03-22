@@ -1,5 +1,4 @@
 from bplib.bp import BpGroup
-from core.util import pedersen_setup
 from core.zkp import ZKP_Schnorr, ZKP_Schnorr_FS, Damgard_Transfor
 
 

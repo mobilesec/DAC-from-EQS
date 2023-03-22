@@ -3,7 +3,7 @@ This implementation of SPSQE-UC signature (called as EQC_Sign class). It uses Se
 See the following for the details
  -Practical Delegatable Anonymous Credentials From Equivalence Class Signatures, PETS 2023.
    https://eprint.iacr.org/2022/680
-@Author: Omid
+@Author: Omid Mir
 """
 
 from numpy.polynomial.polynomial import polyfromroots

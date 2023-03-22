@@ -1,13 +1,13 @@
 # **Delegatable Anonymous Credentials From Equivalence Class Signatures**
 
-This repository contains an implementation of a novel delegatable anonymous credentials (DAC) scheme presented in the paper [Practical Delegatable Anonymous Credentials From Equivalence Class Signatures](https://eprint.iacr.org/2022/680), showcasing its performance and practicality.
+This repository contains an implementation of a novel delegatable anonymous credentials (DAC) scheme presented in the paper [Practical Delegatable Anonymous Credentials From Equivalence Class Signatures](https://eprint.iacr.org/2022/680) (PETS 2023), showcasing its performance and practicality.
 
 The proposed DAC scheme provides anonymity for delegations, supports attributes, and is efficiently constructed using a new primitive called Structure-Preserving Signatures on Equivalence Classes on Updatable Commitments (SPSEQ-UC). This approach enables the owners of credentials to delegate them to other users, modeling hierarchies as encountered in public-key infrastructures (PKIs) while providing strong privacy guarantees for authentication and access control.
 
 The implementation includes optimizations such as cross-set commitment aggregation and Schnorr-style discrete-logarithm zero-knowledge proofs and using Damgard's technique for obtaining malicious-verifier interactive zero-knowledge proofs of knowledge and etc., allowing for selective and efficient showings in the DAC without using costly zero-knowledge proofs (i.e., proving knowledge of signature and hidden attributes).
 
 # Warning:
-This implementation not been audited and is not ready for a production application. The library is provided for research-purpose only and is still not meant to be used in production.
+This implementation has not been audited and is not ready for a productive use. The library is provided for research-purpose only and is still not meant to be used in production.
 
 #  Getting started
 Library is built on top of [petlib](https://github.com/gdanezis/petlib) and [bplib ](https://github.com/gdanezis/bplib). To install the development dependencies run

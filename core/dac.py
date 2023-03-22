@@ -3,7 +3,7 @@ This is implementation of delegatable anonymous credential using SPSQE-UC signat
 See  the following for the details:
 - Practical Delegatable Anonymous Credentials From Equivalence Class Signatures, PETS 2023.
    https://eprint.iacr.org/2022/680
-@Author: Omid
+@Author: Omid Mir
 """
 
 from bplib.bp import BpGroup

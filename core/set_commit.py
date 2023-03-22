@@ -4,7 +4,7 @@ These commitments can be used to build SPSQE-UC signatures and their application
 See  the following for the details:
 - Structure-Preserving Signatures on Equivalence Classes and Constant-Size Anonymous Credentials" by Fuchsbauer1 et al.,
 - (PETS) Practical, Efficient, Delegatable Ano nymous Credentials through SPSEQ-UC, by Mir et al.,
-@Author: Omid
+@Author: Omid Mir
 """
 from bplib.bp import BpGroup
 from binascii import hexlify
