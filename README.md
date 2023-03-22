@@ -85,11 +85,11 @@ I want to express my sincere thanks to Martin Schwaighofer for his support and a
 # Citation:
 If you use our code, please cite our paper:
 
-@misc{cryptoeprint:2022/680,
+     @misc{cryptoeprint:2022/680,
       author = {Omid Mir and Daniel Slamanig and Balthazar Bauer and René Mayrhofer},
       title = {Practical Delegatable Anonymous Credentials From Equivalence Class Signatures},
       howpublished = {Cryptology ePrint Archive, Paper 2022/680},
       year = {2022},
       note = {\url{https://eprint.iacr.org/2022/680}},
       url = {https://eprint.iacr.org/2022/680}
-}
+     }
