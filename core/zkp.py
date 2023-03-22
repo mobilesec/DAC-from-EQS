@@ -1,3 +1,8 @@
+"""
+This is an implementation of Schnorr proof (non-interactive using FS heuristic), Schnorr interactive proof,  
+and Damgard’s compiler for obtaining malicious-verifier interactive zero-knowledge proofs of knowledge
+"""
+
 from petlib.bn import Bn
 from hashlib import sha256
 from core.util import pedersen_setup, pedersen_committ, pedersen_dec, ec_sum
