@@ -1,8 +1,9 @@
+"""
+This is a Test (and example of how it works) of ZKP protocols
+"""
+
 from bplib.bp import BpGroup
 from core.zkp import ZKP_Schnorr, ZKP_Schnorr_FS, Damgard_Transfor
-
-
-
 
 def setup_module(module):
     print("__________Setup__Test ZKP___________")
