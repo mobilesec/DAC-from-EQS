@@ -1,3 +1,8 @@
+"""
+Some common and basic tools are used in the project, such as converting messages (attributes) to the format that 
+can be used in the bilinear pairing, EQ relations, and (trapdoor) Pederson commitment, 
+"""
+
 from termcolor import colored
 from coconut.scheme import *
 from coconut.utils import *
