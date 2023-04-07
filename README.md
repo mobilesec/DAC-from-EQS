@@ -58,22 +58,22 @@ Additionally, the module implements a cross-set commitment. This feature enables
              Damgard_Transfor(ZKP_Schnorr)  
              
 
-- *dac.py* : This module is provided as a DAC class in Python. It requires the abouve modulars and has the following methods:
+- *dac.py* : This module is provided as a DAC class in Python. It requires the above modules and has the following methods:
 
-     1. setup(self): Generates the public parameters of the DAC scheme, including the signing and set commitment and zero-knowledge proofs. It also creates objects of the underlying schemes.
+     1. `setup(self)`: Generates the public parameters of the DAC scheme, including the signing and set commitment and zero-knowledge proofs. It also creates objects of the underlying schemes.
 
-     2. user_keygen(self, pp_dac): Generates a key pair for a user.
+     2. `user_keygen(self, pp_dac)`: Generates a key pair for a user.
 
-     3. nym_gen(self, pp_dac, usk, upk): Generates a new pseudonym and auxiliary information.
+     3. `nym_gen(self, pp_dac, usk, upk)`: Generates a new pseudonym and auxiliary information.
 
-     4. issue_cred(self, pp_dac, attr_vector, sk, nym_u, k_prime, proof_nym_u): Issues a root credential to a user.
+     4. `issue_cred(self, pp_dac, attr_vector, sk, nym_u, k_prime, proof_nym_u)`: Issues a root credential to a user.
 
-     5. proof_cred(self, pp_dac, nym_R, aux_R, cred_R, Attr, D):
+     5. `proof_cred(self, pp_dac, nym_R, aux_R, cred_R, Attr, D)`:
     Generates a proof of a credential for a given pseudonym and selective disclosure D.
 
-    6. verify_proof(self, pp_dac, proof, D):  verify proof of a credential
+    6. `verify_proof(self, pp_dac, proof, D)`:  verify proof of a credential
 
-    7. delegator(self, pp_dac, cred_u, A_l, l, sk_u, proof_nym) and delegatee(self, pp_dac, cred, A_l, sk_R, nym_R): Create a delegatable credential form user U to a user R
+    7. `delegator(self, pp_dac, cred_u, A_l, l, sk_u, proof_nym)` and `delegatee(self, pp_dac, cred, A_l, sk_R, nym_R)`: Create a delegatable credential from user `U` to a user `R`.
 
 # Usage
 
@@ -81,15 +81,3 @@ An easy way to see how to use the library can be found on the tests.
 
 # Acknowledgements
 I want to express my sincere thanks to Martin Schwaighofer for his support and assistance in using nix manager to build the library. 
-
-# Citation:
-If you use our code, please cite our paper:
-
-     @misc{cryptoeprint:2022/680,
-      author = {Omid Mir and Daniel Slamanig and Balthazar Bauer and René Mayrhofer},
-      title = {Practical Delegatable Anonymous Credentials From Equivalence Class Signatures},
-      howpublished = {Cryptology ePrint Archive, Paper 2022/680},
-      year = {2022},
-      note = {\url{https://eprint.iacr.org/2022/680}},
-      url = {https://eprint.iacr.org/2022/680}
-     }
