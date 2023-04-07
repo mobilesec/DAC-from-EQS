@@ -14,14 +14,14 @@ class ZKP_Schnorr_FS:
     def __init__(self, group):
         self.G = group
 
-    def setup(slef):
-        g = slef.G.gen2()
-        o = slef.G.order()
-        group = slef.G
+    def setup(self):
+        g = self.G.gen2()
+        o = self.G.order()
+        group = self.G
         params = (group, g, o)
         return params
 
-    def challenge(slef, elements):
+    def challenge(self, elements):
         """Packages a challenge in a bijective way"""
         elem = [len(elements)] + elements
         elem_str = map(str, elem)
@@ -32,7 +32,7 @@ class ZKP_Schnorr_FS:
         return Bn.from_binary(H.digest())
 
 
-    def non_interact_prove(slef, params, stm, secret_wit):
+    def non_interact_prove(self, params, stm, secret_wit):
         """Schnorr proof (non-interactive using FS heuristic)"""
         (G, g, o) = params
         if isinstance(stm, list) == True:
@@ -40,14 +40,14 @@ class ZKP_Schnorr_FS:
             W_list = [w_list[i] * g for i in range(len(w_list))]
             Anoncment = ec_sum(W_list)
             state = ['schnorr', g, stm, Anoncment.__hash__()]
-            c = slef.challenge(state) % o
+            c = self.challenge(state) % o
             r = [(w_list[i] - c * secret_wit[i]) % o for i in range(len(secret_wit))]
             return (r, c)
         else:
             w = o.random()
             W = w * g
             state = ['schnorr', g, stm, W.__hash__()]
-            c = slef.challenge(state) % o
+            c = self.challenge(state) % o
             # hash_c = challenge(state)
             # c = Bn.from_binary(hash_c) % o
             r = (w - c * secret_wit) % o
@@ -87,7 +87,7 @@ class ZKP_Schnorr:
         params = (group, g, o)
         return params
 
-    def challenge(slef, elements):
+    def challenge(self, elements):
         """Packages a challenge in a bijective way"""
 
         elem = [len(elements)] + elements
@@ -104,15 +104,15 @@ class ZKP_Schnorr:
         W_element = w_random * g
         return (W_element, w_random)
 
-    def response(slef, challenge, announce_randomnes, stm, secret_wit):
+    def response(self, challenge, announce_randomnes, stm, secret_wit):
         #G, g, o = params
-        assert secret_wit * slef.G.gen1() == stm
-        res = (announce_randomnes + challenge * secret_wit) % slef.G.order()
+        assert secret_wit * self.G.gen1() == stm
+        res = (announce_randomnes + challenge * secret_wit) % self.G.order()
         return res
 
-    def verify(slef, challenge, announce_element, stm, response):
+    def verify(self, challenge, announce_element, stm, response):
         """Verify the statement ZK(x ; h = g^x)"""
-        (G, g, o) = slef.params
+        (G, g, o) = self.params
         left_side = response * g
         right_side = (announce_element + challenge * stm)
         return left_side == right_side
@@ -139,11 +139,10 @@ class Damgard_Transfor(ZKP_Schnorr):
         pedersen_open = (r, m, W_element)
         return (pedersen_commit, pedersen_open)
 
-    def verify(slef, challenge, pedersen_open, pedersen_commit, stm, response):
-        (G, g, o, h) = slef.pp_pedersen
+    def verify(self, challenge, pedersen_open, pedersen_commit, stm, response):
+        (G, g, o, h) = self.pp_pedersen
         (open_randomness, announce_randomnes, announce_element) = pedersen_open
         pedersen_open = (open_randomness, announce_randomnes)
         left_side = response * g
         right_side = (announce_element + challenge * stm)
-        return left_side == right_side and pedersen_dec(slef.pp_pedersen, pedersen_open, pedersen_commit)
-
+        return left_side == right_side and pedersen_dec(self.pp_pedersen, pedersen_open, pedersen_commit)
