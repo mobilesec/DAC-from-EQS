@@ -1,6 +1,6 @@
 """
 This is a Test (and example of how it works) of DAC protocol section 4 in the paper: dac.py
-This file contains unit tests for the functions in dac.py.py.
+This file contains unit tests for the functions in dac.py.
 It tests the functions with different inputs and verifies that they produce the expected outputs.
 """
 
@@ -40,7 +40,6 @@ def setup_module(module):
     ## check if nizp of signing keys is correct
     assert (nizkp.non_interact_verify(pp_nizkp, vk_stm, proof_vk))
     assert (nizkp.non_interact_verify(pp_nizkp, alpha_stm, proof_alpha))
-
 def test_root_cred() -> None:
     """Test the creation of a root credential."""
     (pp_sign, pp_zkp, pp_nizkp, vk_ca) = pp_dac
@@ -53,6 +52,8 @@ def test_root_cred() -> None:
     (sigma, update_key, commitment_vector, opening_vector) = cred
     ## check the correctness of root credential
     assert (spseq_uc.verify(pp_sign, vk_ca, nym_u, commitment_vector, sigma)), ValueError("signature/credential is not correct")
+    print()
+    print("Creating a root credential, and checking if the credential is correct")
 
 def test_issuing() -> None:
     """Test issuing/delegating a credential of user U to a user R."""
@@ -82,6 +83,9 @@ def test_issuing() -> None:
 
     ## check the correctness of credential
     assert (spseq_uc.verify(pp_sign, vk_ca, nym_P, rndmz_commitment_vector, sigma_prime)), ValueError("signature/credential is not correct")
+    print()
+    print("Issuing/delegating a credential of user U to a user R, and checking if the credential is correct")
+
 
 def test_proof_cred() -> None:
     """Test proving a credential to verifiers."""
@@ -100,3 +104,5 @@ def test_proof_cred() -> None:
 
     ## check a proof
     assert (dac.verify_proof(pp_dac, proof, D)) , ValueError("the credential is not valid")
+    print()
+    print("proving a credential to verifiers, and checking if the proof is correct")
