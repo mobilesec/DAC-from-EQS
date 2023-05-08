@@ -18,9 +18,9 @@ class DAC:
 
         :param group: bilinear group BpGroup
         :param t: max cardinality
-        :param l_message: the max number of the messagses
+        :param l_message: the max number of the messages
 
-        :return: public parameters including sign and set comment and zkp, and onject of SC and sign anf zkp schemes
+        :return: public parameters including sign and set comment and zkp, and object of SC and sign anf zkp schemes
         """
         global group, order
         group = BpGroup()
@@ -129,14 +129,14 @@ class DAC:
 
     def proof_cred(self, pp_dac, nym_R, aux_R, cred_R, Attr, D):
         """
-            Generates a proof of a credential for a given pseudonym and selective disclosure D.
+            Generates proof of a credential for a given pseudonym and selective disclosure D.
 
         :param pp_dac:public parameters
-        :param nym_R: pseudonym of user who wants to prove credentials to verifiers
-        :param aux_R: auxiliary information related to pseudonym
+        :param nym_R: pseudonym of a user who wants to prove credentials to verifiers
+        :param aux_R: auxiliary information related to the pseudonym
         :param cred_R: credential of pseudonym R that is needed to prove
         :param Attr: attributes vector in credential R
-        :param D: subset of attributes (selective disclose)
+        :param D: the subset of attributes (selective disclose)
 
         :return: a proof of credential that is a credential P
         """
@@ -193,7 +193,7 @@ class DAC:
 
 
     """
-    This is the delgation phase or the issuing credential protocol in the paper between delegator and delegatee 
+    This is the delegation phase or the issuing credential protocol in the paper between the delegator and delegatee. 
     """
 
     def delegator(self, pp_dac, cred_u, A_l, l, sk_u, proof_nym):
@@ -203,8 +203,8 @@ class DAC:
         :param pp_dac: public parameters
         :param cred_u: delegator u credential
         :param A_l: additional attributes set can be added into credential
-        :param l: index of message set
-        :param sk_u: secret key of credential holder
+        :param l: index of the message set
+        :param sk_u: secret key of the credential holder
         :param proof_nym: check proof of nym of user R
 
         :return: delegatable credential cred_R for a user R
@@ -230,7 +230,7 @@ class DAC:
         Create a delegatable credential to a user R
 
         :param pp_dac: public parameters
-        :param cred: credential got from delegator
+        :param cred: credential got from the delegator
         :param A_l: additional attributes set can be added into credential
         :param sk_R: secret key of delegatee R
         :param nym_R: c of delegatee nym_R
