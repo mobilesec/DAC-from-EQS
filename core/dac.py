@@ -20,7 +20,7 @@ class DAC:
         :param t: max cardinality
         :param l_message: the max number of the messages
 
-        :return: public parameters including sign and set comment and zkp, and object of SC and sign anf zkp schemes
+        :return: public parameters including sign and set comment and zkp, and object of SC and sign and zkp schemes
         """
         global group, order
         group = BpGroup()
@@ -100,10 +100,10 @@ class DAC:
 
         :param pp_dac: public parameters
         :param Attr_vector: attribute vector
-        :param sk: signing key sk_ca in papre
-        :param nym_u: pseudonym of user who gets credential
+        :param sk: signing key sk_ca in paper
+        :param nym_u: pseudonym of the user who gets credential
         :param k_prime: index need for update key uk
-        :param proof_nym_u: proof of pseudonym that need to be checked if it is coorect
+        :param proof_nym_u: proof of pseudonym that need to be checked if it is correct
 
         :return: a root credential
         """
