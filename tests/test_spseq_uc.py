@@ -33,6 +33,8 @@ def test_sign():
 
     # verify sigma
     assert(sign_scheme.verify(pp, vk, pk_u, commitment_vector, sigma)), ValueError("signiture is not correct")
+    print()
+    print("Generate a signature and verify it")
 
 def test_changerep():
     """Generate a signature, run changrep function and verify it"""
@@ -55,7 +57,8 @@ def test_changerep():
 
     # check the randomized signature is valid for the new values
     assert (sign_scheme.verify(pp, vk, rndmz_pk_u, rndmz_commitment_vector, sigma_prime)), ValueError("CahngeRep signiture is not correct")
-
+    print()
+    print("Generate a signature, run changrep function and verify if output of changrep (randomized sign) is correct")
 
 def test_changerep_uk():
     """Generate a signature, run changrep function using update_key, randomize update_key (uk) and verify it"""
@@ -77,8 +80,9 @@ def test_changerep_uk():
     (sigma_prime, rndmz_update_key, rndmz_commitment_vector, rndmz_opening_vector, rndmz_pk_u, chi)=sign_scheme.change_rep(pp, vk, pk_u, commitment_vector, opening_vector, sigma, mu, psi, B=True, update_key=update_key)
 
     # check this new signature
-    assert (sign_scheme.verify(pp, vk, rndmz_pk_u, rndmz_commitment_vector, sigma_prime)), ValueError("CahngeRep signiture with update key update_key is not correct")
-
+    assert (sign_scheme.verify(pp, vk, rndmz_pk_u, rndmz_commitment_vector, sigma_prime)), ValueError("CahngeRep signature with update key update_key is not correct")
+    print()
+    print("Generate a signature, run changrep function using update_key, randomize signature and update_key (uk) and verify all")
 
 def test_changerel_from_sign():
     """Generate a signature, run changrel function one the signature, add one additional commitment using update_key (uk) and verify it"""
@@ -96,6 +100,9 @@ def test_changerel_from_sign():
 
     # check if the new signature is valid for C1, C2, C3 where C3 is the new commitment
     assert (sign_scheme.verify(pp, vk, pk_u, Commitment_vector_new, Sigma_tilde)), ValueError("CahngeRel Signiture from Sign is not correct")
+    print()
+    print("Generate a signature, run changrel function, which adds one additional commitment using update_key (uk), and verify the new signature with the extended commitment")
+
 
 def test_changerel_from_rep():
     """run changrel on the signature that is coming from cgangrep (that is already randomized) and verify it"""
@@ -119,7 +126,9 @@ def test_changerel_from_rep():
     (Sigma_tilde, Commitment_L, Opening_L, Commitment_vector_new, Opening_vector_new) =sign_scheme.change_rel(pp, message3_str, 3, sigma_prime, rndmz_commitment_vector, rndmz_opening_vector, rndmz_update_key, mu)
 
     # check if the new signature is valid for C1, C2, C3 where C3 is the new commitment
-    assert(sign_scheme.verify(pp, vk, rndmz_pk_u, Commitment_vector_new, Sigma_tilde)), ValueError("CahngeRel on Signiture from Rep is not correct")
+    assert(sign_scheme.verify(pp, vk, rndmz_pk_u, Commitment_vector_new, Sigma_tilde)), ValueError("CahngeRel on signature from Rep is not correct")
+    print()
+    print("Run changrel on the signature that is coming from cgangrep (that is already randomized) and verify it")
 
 def test_convert():
     """run convert protocol (send_convert_sig, receive_convert_sig) to switch a pk_u to new pk_u and verify it"""
@@ -141,3 +150,5 @@ def test_convert():
 
     # check if the new signature is valid for pk_new
     assert(sign_scheme.verify(pp, vk, PK_u_new, commitment_vector, sigma_new))
+    print()
+    print("run convert protocol (send_convert_sig, receive_convert_sig) to switch a pk_u to new pk_u and verify the new signature for new pk_u it")
