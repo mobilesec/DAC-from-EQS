@@ -10,7 +10,7 @@ The implementation includes optimizations such as cross-set commitment aggregati
 This implementation has not been audited and is not ready for a productive use. The library is provided for research-purpose only and is still not meant to be used in production.
 
 #  Getting started
-Library is built on top of [petlib](https://github.com/gdanezis/petlib) and [bplib ](https://github.com/gdanezis/bplib). To install the development dependencies run
+Library is built on top of [petlib](https://github.com/gdanezis/petlib) and [bplib ](https://github.com/gdanezis/bplib). To install the development dependencies run the following commands inside the cloned repository:
 
 1. Install nix with the required experimental features from determinate systems
 
