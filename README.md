@@ -9,6 +9,15 @@ The implementation includes optimizations such as cross-set commitment aggregati
 # Warning:
 This implementation has not been audited and is not ready for a productive use. The library is provided for research-purpose only and is still not meant to be used in production.
 
+# System Requirements
+
+The following system requirements must be met in order to run the code:
+
+- Linux operating system
+- x86_64 architecture
+
+Note that the software has only been tested on Linux/x86_64 and may not work on other platforms.
+
 #  Getting started
 Library is built on top of [petlib](https://github.com/gdanezis/petlib) and [bplib ](https://github.com/gdanezis/bplib). To install the development dependencies run the following commands inside the cloned repository:
 
