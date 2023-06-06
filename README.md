@@ -1,6 +1,6 @@
 # **Delegatable Anonymous Credentials From Equivalence Class Signatures**
 
-This repository contains an implementation of a novel delegatable anonymous credentials (DAC) scheme presented in the paper [Practical Delegatable Anonymous Credentials From Equivalence Class Signatures](https://eprint.iacr.org/2022/680) (PETS 2023), showcasing its performance and practicality.
+This repository contains an implementation of a novel delegatable anonymous credentials (DAC) scheme presented in the paper [Practical Delegatable Anonymous Credentials From Equivalence Class Signatures](https://petsymposium.org/popets/2023/popets-2023-0093.pdf) (PETS 2023), showcasing its performance and practicality.
 
 The proposed DAC scheme provides anonymity for delegations, supports attributes, and is efficiently constructed using a new primitive called Structure-Preserving Signatures on Equivalence Classes on Updatable Commitments (SPSEQ-UC). This approach enables the owners of credentials to delegate them to other users, modeling hierarchies as encountered in public-key infrastructures (PKIs) while providing strong privacy guarantees for authentication and access control.
 
